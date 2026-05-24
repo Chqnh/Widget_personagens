@@ -1,0 +1,280 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meus Personagens</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:#0f0f0f;
+    font-family:Arial, sans-serif;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+/* CONTAINER */
+
+.gallery-wrapper{
+    width:100%;
+    height:500px;
+    display:flex;
+    align-items:center;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    position:relative;
+}
+
+/* FADE NAS LATERAIS */
+
+.gallery-wrapper::before,
+.gallery-wrapper::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:120px;
+    height:100%;
+    z-index:10;
+    pointer-events:none;
+}
+
+.gallery-wrapper::before{
+    left:0;
+    background:linear-gradient(to right,#0f0f0f,transparent);
+}
+
+.gallery-wrapper::after{
+    right:0;
+    background:linear-gradient(to left,#0f0f0f,transparent);
+}
+
+/* TRACK */
+
+.gallery-track{
+    display:flex;
+    gap:24px;
+    width:fit-content;
+    animation:scroll 35s linear infinite;
+}
+
+.gallery-track:hover{
+    animation-play-state:paused;
+}
+
+/* CARD */
+
+.card{
+    width:320px;
+    height:420px;
+    border-radius:28px;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    flex-shrink:0;
+    position:relative;
+    background:#1a1a1a;
+    cursor:pointer;
+    transition:transform .3s ease;
+}
+
+.card:hover{
+    transform:scale(1.03);
+}
+
+/* IMAGEM */
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* OVERLAY */
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.1)
+    );
+
+    display:flex;
+    align-items:flex-end;
+    padding:24px;
+}
+
+/* TEXTO */
+
+.content h2{
+    color:white;
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.content p{
+    color:#cfcfcf;
+    font-size:14px;
+    line-height:1.4;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes scroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(calc(-50% - 12px));
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="gallery-wrapper">
+
+    <div class="gallery-track">
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+            <img src="https://i.imgur.com/fWN1xrT.jpeg">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Theodore</h2>
+                    <p>DaggeHeart / Mago</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="card">
+            <img src="https://i.imgur.com/cp3yZ15.png">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Cain</h2>
+                    <p>DaggerHeart / Treinador</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="card">
+            <img src="https://i.imgur.com/exbVk2K.png">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Kael</h2>
+                    <p>Tormenta 20 / Treinador</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="card">
+            <img src="https://i.imgur.com/EZc2Be6.png">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Irian</h2>
+                    <p>DaggerHeart / Ladino</p>
+                </div>
+            </div>
+        </div>
+
+      <!-- CARD 5 -->
+
+        <div class="card">
+            <img src="https://i.imgur.com/BH3z9Q2.jpeg">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Elio</h2>
+                    <p>DaggerHeart / Guerreiro</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DUPLICAÇÃO PRA LOOP -->
+
+        <div class="card">
+            <img src="https://i.imgur.com/fWN1xrT.jpeg">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Theodore</h2>
+                    <p>DaggeHeart / Mago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/cp3yZ15.png">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Cain</h2>
+                    <p>DaggerHeart / Treinador</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/exbVk2K.png">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Kael</h2>
+                    <p>Caçador das ruínas antigas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/EZc2Be6.png">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Irian</h2>
+                    <p>DaggerHearrt / Ladino</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/BH3z9Q2.jpeg">
+
+            <div class="overlay">
+                <div class="content">
+                    <h2>Elio</h2>
+                    <p>DaggerHeart / Guerreiro</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
